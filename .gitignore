@@ -1,0 +1,10 @@
+#Variables(Contraseñas y credenciales)
+.env
+#Entorno(Librerías instaladas)
+.venv/
+venv/
+env/
+#Archivos temporales
+__pycache__/
+*.pyc
+
