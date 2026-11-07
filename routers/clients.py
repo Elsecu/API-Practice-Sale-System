@@ -27,7 +27,7 @@ def create_clients(client: ClientCreate, db: Session = Depends(database.get_db))
     db.refresh(new_client)
     return new_client
 
-@router.delete("/{client_id}", status_code=204)
+@router.delete("/{id}", status_code=204)
 def delete_clients(id: int, db:Session = Depends(database.get_db)):
     delete_client = db.query(models.ClientModel).filter(models.ClientModel.id == id).first()
     

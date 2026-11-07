@@ -29,7 +29,7 @@ def get_users(skip: int=0, limit: int = 10, db: Session = Depends(database.get_d
         )
     return users
 
-@router.delete("/{user_id}", status_code=204)
+@router.delete("/{id}", status_code=204)
 def delete_users(id: int, db: Session = Depends(database.get_db)):
     delete_user = db.query(models.UserModel).filter(models.UserModel.id == id).first()
    

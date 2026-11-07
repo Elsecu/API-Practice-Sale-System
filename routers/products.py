@@ -28,7 +28,7 @@ def get_products(skip: int=0, limit: int = 10, db: Session = Depends(database.ge
         )
     return get_product
 
-@router.delete("/{product_id}", status_code=204)
+@router.delete("/{id}", status_code=204)
 def delete_products(id: int, db:Session = Depends(database.get_db)):
     delete_product = db.query(models.ProductModel).filter(models.ProductModel.id == id).first()
 
